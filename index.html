@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X投稿ジェネレーター</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>X投稿ジェネレーター</h1>
+    <p class="subtitle">入力した内容から、X(旧Twitter)の投稿文と画像生成プロンプトを自動で作成します。</p>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <div class="field">
+        <label for="genre">投稿ジャンル</label>
+        <select id="genre">
+          <option value="開発ログ">開発ログ</option>
+          <option value="制作物の紹介">制作物の紹介</option>
+          <option value="ブログ記事の告知">ブログ記事の告知</option>
+          <option value="Webライティングの学び">Webライティングの学び</option>
+          <option value="AI活用の記録">AI活用の記録</option>
+          <option value="日々の学習記録">日々の学習記録</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="todayWork">今日やったこと <span class="required">必須</span></label>
+        <textarea id="todayWork" rows="3" placeholder="例: 予約管理アプリで、予約登録後に部屋の優先順位を再計算する機能を実装した"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="message">伝えたいこと</label>
+        <textarea id="message" rows="2" placeholder="例: 不具合の原因と、改善できたこと"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="tone">文章の雰囲気(・区切りで複数可)</label>
+        <input type="text" id="tone" placeholder="例: 親しみやすい・初心者らしい・前向き">
+      </div>
+
+      <div class="field">
+        <label for="imageDesc">画像イメージ</label>
+        <textarea id="imageDesc" rows="2" placeholder="例: シンプルな開発記録用画像"></textarea>
+      </div>
+
+      <div class="field checkbox-field">
+        <label>
+          <input type="checkbox" id="withHashtags" checked>
+          ハッシュタグを付ける
+        </label>
+      </div>
+
+      <button id="generateBtn" class="primary-btn">生成する</button>
+    </section>
+
+    <section id="resultSection" class="result-section" hidden>
+      <div class="output-block">
+        <div class="output-header">
+          <h2>投稿文</h2>
+          <span id="charCount" class="char-count">0 / 280</span>
+        </div>
+        <textarea id="postOutput" rows="10" readonly></textarea>
+        <button id="copyPostBtn" class="secondary-btn">投稿文をコピー</button>
+      </div>
+
+      <div class="output-block">
+        <div class="output-header">
+          <h2>画像生成プロンプト</h2>
+        </div>
+        <textarea id="imageOutput" rows="6" readonly></textarea>
+        <button id="copyImageBtn" class="secondary-btn">プロンプトをコピー</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
