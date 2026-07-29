@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#1d9bf0"/>
+
+  <!-- speech bubble -->
+  <path d="M56 76 h144 a20 20 0 0 1 20 20 v64 a20 20 0 0 1 -20 20 h-84 l-32 28 v-28 h-28 a20 20 0 0 1 -20 -20 v-64 a20 20 0 0 1 20 -20 z"
+        fill="#ffffff"/>
+
+  <!-- text lines inside bubble -->
+  <rect x="80" y="104" width="112" height="12" rx="6" fill="#1d9bf0"/>
+  <rect x="80" y="128" width="72" height="12" rx="6" fill="#1d9bf0"/>
+
+  <!-- sparkle: auto-generate accent -->
+  <path d="M196 40
+           l8 20 l20 8
+           l-20 8 l-8 20
+           l-8 -20 l-20 -8
+           l20 -8 z"
+        fill="#ffffff"/>
+</svg>
